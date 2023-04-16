@@ -1,0 +1,16 @@
+name: langchain-aws-service-openai
+channels:
+  - https://conda.anaconda.org/conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - aws-cdk-lib
+    - langchain==0.0.126
+    - boto3
+    - requests
+    - streamlit
+    - pandas==1.5.2
+    - fastapi==0.74.0
+    - uvicorn==0.17.4
+    - openai==0.27.4
