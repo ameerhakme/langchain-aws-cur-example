@@ -1,4 +1,5 @@
-## Install the dependencies; this creates a Conda env named `langchain-aws-service-openai` and activates it.
+## Install the dependencies; 
+This creates a Conda env named `langchain-aws-service-openai` and activates it.
 ```bash
 conda deactivate
 conda env create -f environment.yml # only needed once
@@ -80,3 +81,5 @@ cd webapp
 ```bash
 streamlit run app.py
 ```
+
+![](webapp/images/aws_cur_data.gif)
