@@ -1,4 +1,6 @@
-## Install the dependencies; 
+This repository demonstrates how to utilize LangChain Agents and large language models (LLMs) to extract insights from numeric tabular data through natural language queries. We specifically focus on the AWS Cost and Usage Report (CUR) as our data source in this example.
+
+## Install the dependencies 
 This creates a Conda env named `langchain-aws-service-openai` and activates it.
 ```bash
 conda deactivate
