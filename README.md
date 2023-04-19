@@ -1,5 +1,27 @@
 This repository demonstrates how to utilize LangChain Agents and large language models (LLMs) to extract insights from numeric tabular data through natural language queries. We specifically focus on the AWS Cost and Usage Report (CUR) as our data source in this example.
 
+### OpenAI API 
+The OpenAI API is a powerful tool for natural language processing tasks, allowing users to generate text, answer questions, and perform other language-related tasks. To access the API, users must obtain an API key, which can be obtained by signing up for OpenAI's API service on their website. Once signed up, users can generate an API key to use with the API. The key can be used to access a range of language models, including GPT-4 and other models tailored to specific use cases.
+
+### LangChain 
+LangChain is an innovative framework that improves LLMs for diverse applications. Although LLMs handle various tasks effectively, they may struggle in specialized domains like finance or engineering, where deep knowledge is essential. LangChain overcomes this limitation with a flexible platform, enabling developers to create tailored solutions that combine LLM strengths with domain expertise. This results in more accurate, nuanced responses for specialized tasks, making it a powerful and effective language-based tool.
+
+#### What is a LangChain Agent?
+Some applications may require more than just a predetermined series of calls to large language models or other tools, but instead a flexible chain that depends on the user's input. In these chains, an "agent" is available, having access to a variety of tools. Based on the user input, the agent can decide which of these tools, if any, should be used. LangChain have created purpose built agents applied to a particular use case such as Pandas Dataframe Agent which uses Python REPL tool to execute commands provided by the LLM. 
+
+#### What is LangChain Python REPL tool? 
+REPL stands for Read-Eval-Print Loop, an interactive programming environment that allows users to execute single lines of code and receive immediate feedback. In some cases, for complex calculations, it can be more efficient to have an LLM generate the code to compute the answer rather than produce the answer directly. To facilitate this, LangChain offers a simple Python REPL that executes commands, allowing users to obtain the results they need with ease.
+
+#### How Do LangChain Agents Work with LLMs Behind the Scenes?
+When a LangChain Agent receives input in the form of a question, it initiates an "Agent Executor" chain. Agent Executors manage the agent's tools, determining which ones to call and in what sequence. In this case, the agent is the Pandas DataFrame Agent, and the tool is the Python REPL.
+
+The Agent Executor chain comprises Thoughts, Actions, and Observations. Thoughts are driven by the LLM, which then provides an Action for the agent to access the Python REPL tool and execute a specific command. After the agent executes the command using the tool, an Observation is passed back to the LLM for evaluation. The LLM generates another Thought, followed by an Action, until it predicts that the agent and the tool have produced the correct answer. 
+
+Agent Executors provide flexibility in managing agents. For instance, they can limit the number of steps an agent takes, ensuring that agents do not go out of control and perform excessive actions. This capability is valuable in maintaining efficiency and preventing potential issues in the process.
+
+
+![](webapp/images/LangChain.png)
+
 ## Install the dependencies 
 This creates a Conda env named `langchain-aws-service-openai` and activates it.
 ```bash
